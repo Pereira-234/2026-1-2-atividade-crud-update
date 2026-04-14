@@ -1,5 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 // Tipagem simples para os dados da API
 interface Product {
@@ -46,9 +48,11 @@ export default async function ProductsPage() {
               <span className="text-lg font-bold">
                 ${product.price.toFixed(2)}
               </span>
-              <button className="text-sm font-medium underline underline-offset-4">
-                Detalhes
+              <Link href="/produtos/edit" >
+                <button className="text-sm font-medium underline underline-offset-4" >
+                Editar Produto
               </button>
+              </Link>
             </CardFooter>
           </Card>
         ))}
